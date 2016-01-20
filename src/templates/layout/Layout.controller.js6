@@ -1,0 +1,48 @@
+/*
+  I had a look at implememting this controller in es6 class. WebStorm didn't compile it, babel
+  was terribly slow, and I haven't setup a toolchain to compile anything into the dist folder
+  so I played safe anddid things in es5.
+ */
+  class LayoutController {
+
+    constructor( GameService ) {
+      this.GameService = GameService;
+      this.uiInView = '';
+      this.next();
+    }
+
+    next() {
+      if ( this.uiInView === '' ) {
+        this.goto( 'game-type' );
+      } else if ( this.uiInView === 'game-type' && this.GameService.getRoundsLeft() > 0 ) {
+        this.goto( 'player-details-1' );
+      } else if ( this.uiInView === 'player-details-1' ) {
+        this.goto( 'player-details-2' );
+      } else if ( this.uiInView === 'player-details-2' ) {
+        this.goto( 'scoreboard' );
+      } else if ( this.uiInView === 'scoreboard' ) {
+
+        if ( this.GameService.getRoundsLeft() > 0 ) {
+          this.goto( 'game' );
+
+        } else {
+          this.goto( 'game-type' );
+        }
+      }
+    }
+
+    goto( stage ) {
+      if ( LayoutController.stages.includes( stage ) ) {
+        this.uiInView = stage;
+      }
+    }
+
+    getView() {
+      return this.uiInView;
+    }
+
+  }
+    LayoutController.$inject = [ 'GameService' ];
+    LayoutController.stages = [ 'player-details-1', 'player-details-2', 'game-type', 'game', 'scoreboard' ];
+
+  export { LayoutController};

@@ -1,0 +1,64 @@
+<html>
+<head>
+  <link rel="stylesheet" href="css/main.css" >
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<div class="container" ng-app="ovo">
+
+  <div ng-controller="LayoutController as layout">
+
+    <noscript>
+      <h1>Loading ...</h1>
+      <p>
+        If this message persists, then the app isn't working.
+        <br>
+        Contact <a href="mailto:shaun@sunderwood.co.uk">shaun@sunderwood.co.uk</a> for assistance.</p>
+    </noscript>
+
+    <div ng-switch="layout.getView()">
+      <div ng-switch-default="game-type">
+        <div ng-include="'templates/game-type/game-type-ui.html'"></div>
+      </div>
+      <div ng-switch-when="player-details-1">
+        <div ng-include="'templates/player-details/player-details-ui.html'"></div>
+      </div>
+      <div ng-switch-when="player-details-2">
+        <div ng-include="'templates/player-details/player-details-ui.html'"></div>
+      </div>
+      <div ng-switch-when="scoreboard">
+        <div ng-include="'templates/scoreboard/scoreboard.html'"></div>
+      </div>
+      <div ng-switch-when="game">
+        <div ng-include="'templates/game/game.html'"></div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- vendor libraries -->
+<script src="vendors/jquery/dist/jquery.js"></script>
+<script src="vendors/angular/angular.js"></script>
+<script src="vendors/angular-route/angular-route.js"></script>
+
+<!-- Classes -->
+<script src="js/PlayerClass.js"></script>
+<script src="js/WeaponClass.js"></script>
+
+<!-- application logic -->
+<script src="js/index.js"></script>
+<script src="templates/game/Game.service.js"></script>
+<script src="templates/game/Game.controller.js"></script>
+<script src="templates/game-type/GameType.controller.js"></script>
+<script src="templates/player/Player.service.js"></script>
+<script src="templates/player-details/PlayerDetails.controller.js"></script>
+<script src="templates/player-details/PlayerDetails.service.js"></script>
+<script src="templates/scoreboard/Scoreboard.controller.js"></script>
+<script src="templates/weapon/Weapon.service.js"></script>
+<script src="templates/layout/Layout.controller.js"></script>
+
+</body>
+</html>

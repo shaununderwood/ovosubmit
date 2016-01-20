@@ -1,0 +1,33 @@
+<div class="row text-center" ng-controller="GameController as vm">
+
+  <div class="col-xs-6"
+       ng-repeat="player in vm.players">
+
+    <h2 ng-bind="player.name"></h2>
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <div ng-show="player.hasNotChosenWeapon()" style="height:200px; border:1px black solid">CHOOSE YOUR WEAPON</div>
+        <div ng-show="player.hasChosenWeapon() &&!vm.theBigReveal" style="height:200px; border:1px black solid">CHOSEN</div>
+        <div ng-show="player.hasChosenWeapon() && vm.theBigReveal"
+             style="height:200px; border:1px black solid; background-size: contain; background-position: center; background-image: url({{player.getWeapon().image}})">
+        </div>
+      </div>
+      <div class="col-xs-2"></div>
+    </div>
+
+    <hr class="su-hr-invisible">
+
+    <div class="row">
+      <div class="col-xs-3"></div>
+      <div class="col-xs-2 su-game-type-btn"
+           ng-class="{'hide':player.hasChosenWeapon()}"
+           ng-repeat="weapon in vm.weapons"
+           ng-click="vm.setPlayerWeapon( player, weapon);">
+        <h3>P</h3>
+      </div>
+      <div class="col-xs-3"></div>
+    </div>
+
+  </div>
+</div>

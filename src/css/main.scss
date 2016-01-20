@@ -1,0 +1,24 @@
+@import '../vendors/sanitize-css/sanitize';
+@import '../vendors/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+
+.su-game-type-btn {
+  @extend .btn;
+  @extend .btn-default;
+}
+
+.su-hr-invisible {
+  border: 0px;
+}
+
+.su-selected {
+  @extend .btn-warning;
+}
+
+.su-game-play-btn {
+  @extend .su-game-type-btn;
+  @extend .btn-success;
+}
+
+.ng-cloak {
+  display: none;
+}

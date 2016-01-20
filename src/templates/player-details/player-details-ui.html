@@ -1,0 +1,46 @@
+<div id="player-details-form" ng-controller="PlayerDetailsController as vm">
+  <div class="row">
+    <div class="col-md-12">
+      &nbsp;
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="col-md-4"></div>
+
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <h1>Player <span ng-bind="vm.playerNumber || ''"></span> Name</h1>
+            <h1><span ng-bind="vm.playerName"></span></h1>
+          </div>
+        </div>
+
+        <hr class="su-hr-invisible">
+
+        <div class="row">
+          <div class="col-xs-12">
+            <h3>
+              <input type="text" class="form-control input-lg"
+                     ng-model="vm.playerName" />
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-8"></div>
+          <div class="col-xs-4 btn-group">
+            <button class="pull-right btn btn-lg btn-success"
+                    ng-click="vm.savePlayerDetails(vm.playerName)"
+                >Done</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+</div>
