@@ -3,7 +3,7 @@
 
 ## background
 My original thought when reading the assignment was, _two players on one screen? How's that going to 
-work?_Then I saw _Play against the machine_ which made sense.
+work?_ Then I saw _Play against the machine_ which made sense.
 
 But my mind didn't let the initial thought rest.  So, I tried to structure the app such that it could
 as some point in the future be adapted to easily replace a player with a remotePlayer. I think I've 
