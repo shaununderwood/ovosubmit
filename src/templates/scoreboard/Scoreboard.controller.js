@@ -26,7 +26,7 @@
   };
 
   ScoreboardController.prototype.getPlayers = function getPlayers( ){
-    this.GameService.getPlayers();
+    return this.GameService.getPlayers( );
   };
 
   ScoreboardController.prototype.quit = function quit( ){
