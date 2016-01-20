@@ -2,16 +2,18 @@
   'use strict';
 
   function PlayerService( ){
-    this.players = [];
+    this.players = [ ];
     //vm.players.push ( new ovo.Player( 'shaun'));
     //vm.players.push ( new ovo.Player( 'julia'));
   }
   PlayerService.prototype.getPlayers = function getPlayers( ){
     return this.players;
   };
-
-  PlayerService.prototype.getPlayers = function addPlayers( player){
+  PlayerService.prototype.addPlayer = function addPlayer( player){
     this.players.push( player);
+  };
+  PlayerService.prototype.reset = function addPlayer( ){
+    this.players = [ ];
   };
 
 

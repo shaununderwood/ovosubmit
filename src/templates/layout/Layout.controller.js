@@ -8,7 +8,6 @@
     vm.GameService = GameService;
     vm.uiInView = '';
     vm.next( );
-    console.log( 'LayoutController constructor start');
 
     vm.$rootscope.$watchCollection( playersArrayWatchThis, playersArrayAndDoThis);
     function playersArrayWatchThis( ){

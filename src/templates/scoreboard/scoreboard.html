@@ -47,7 +47,10 @@
       <div class="row text-class"
            ng-if="vm.getGamesLeft() > 0">
         <div class="col-xs-2"></div>
-        <div class="col-xs-3 su-game-type-btn" ng-click="vm.quit();">
+        <div class="col-xs-3 su-game-type-btn" ng-click="vm.quit();"
+             ng-init="finishName='Abort'"
+             ng-mouseenter="finishName='I\'m a coward'"
+             ng-mouseleave="finishName='Abort'">
           <h3>Abort</h3>
         </div>
         <div class="col-xs-2"></div>
@@ -59,11 +62,8 @@
 
       <div class="row text-class">
         <div class="col-xs-2"></div>
-        <div class="col-xs-3 su-game-type-btn" ng-click="vm.quit();"
-             ng-init="finishName='Finish'"
-             ng-mouseenter="finishName='I\'m a coward'"
-             ng-mouseleave="finishName='Finish'">
-          <h3 ng-bind="finishName"></h3>
+        <div class="col-xs-3 su-game-type-btn" ng-click="vm.quit();">
+          <h3>Finish</h3>
         </div>
         <div class="col-xs-2"></div>
         <div class="col-xs-3 su-game-play-btn" ng-click="vm.gameOn();">
