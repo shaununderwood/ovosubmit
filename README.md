@@ -14,9 +14,9 @@ Before coding I set up the project to use jasmine-karma for unit testing. Hopefu
 included some tests as a nod of forethought.
 
 ## routing
-
 Being a game it doesn't necessitate following standard routing practices. 
 So, I used a controller mixed with some ng-if and ng-includes.
+
 
 # Installation
 Clone the repo, cd into the top-most folder:

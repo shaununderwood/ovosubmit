@@ -20,7 +20,6 @@
   };
 
   ovo.Weapon.prototype.didItWin = function didItWin( weapon){
-    return this.beats !== weapon;
 
     // I went to all the trouble of creating JS Classes just so i can test out using proper JS classes
     // within an Angular app; i hardly needed them.  But it did lead to the nifty conclusion that

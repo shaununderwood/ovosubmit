@@ -1,15 +1,19 @@
 ( function ( ) {
 
-  function GameController( $q, $timeout, PlayerService, WeaponService){
+  function GameController( $q, $timeout, PlayerService, WeaponService, GameService){
     var vm = this;
 
     vm.$q = $q;
     vm.$timeout = $timeout;
     vm.PlayerService = PlayerService;
     vm.WeaponService = WeaponService;
+    vm.GameService = GameService;
 
     vm.chosen = false;
     vm.theBigReveal = false;
+    vm.gameStatusModel = {
+      gameStatus: false
+    };
 
     vm.players = vm.PlayerService.getPlayers( );
     vm.weapons = vm.WeaponService.getWeapons( );
@@ -26,6 +30,25 @@
     function gameFinished( ){
       // addeseconds for extra suspense until the Big Reveal!
       vm.theBigReveal = true;
+
+      var p0Outcome = vm.players[ 1].getWeapon( ).didItWin( vm.players[ 0].getWeapon( ));
+      var p1Outcome = vm.players[ 0].getWeapon( ).didItWin( vm.players[ 1].getWeapon( ));
+      $timeout( function( ){
+
+        if ( p0Outcome && p1Outcome){
+          alert( 'It\'s a DRAW');
+
+        } else if ( p0Outcome){
+          alert( vm.players[ 0 ].name + ' WON!');
+          vm.players[ 0].won( );
+
+        } else if ( p1Outcome){
+          alert( vm.players[ 1 ].name + ' WON!');
+          vm.players[ 1].won( );
+        }
+
+        vm.GameService.finishedGame( );
+      }, 2000);
     }
 
     function gameAborted( ){

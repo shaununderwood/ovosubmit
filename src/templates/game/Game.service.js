@@ -10,6 +10,9 @@
     m.playersArray = [ ];
     m.player1 = null;
     m.player2 = null;
+    m.gameStatusModel = {
+      gameFinished : false
+    };
   }
 
   GameService.prototype.reset = function reset( ){
@@ -19,6 +22,9 @@
     m.playersArray = [ ];
     m.player1 = null;
     m.player2 = null;
+    m.gameStatusModel = {
+      gameFinished : false
+    };
   };
 
   GameService.prototype.startNextGame = function startNextGame( ){
@@ -73,6 +79,10 @@
     return this.playersArray.length + 1;
   };
 
+
+  GameService.prototype.finishedGame = function finishedGame(){
+    this.gameStatusModel.gameFinished = true;
+  };
 
   angular
     .module('ovo')

@@ -10,12 +10,11 @@
     vm.next( );
     console.log( 'LayoutController constructor start');
 
-    vm.$rootscope.$watchCollection( watchThis, andDoThis);
-
-    function watchThis( ){
+    vm.$rootscope.$watchCollection( playersArrayWatchThis, playersArrayAndDoThis);
+    function playersArrayWatchThis( ){
       return vm.GameService.playersArray;
     }
-    function andDoThis( n, o){
+    function playersArrayAndDoThis( n, o){
       if ( n.length === 1 && o.length === 0){
         vm.next();
       }
@@ -23,6 +22,18 @@
         vm.next( );
       }
     }
+
+    vm.$rootscope.$watchCollection( gameStatusModelWatchThis, gameStatusModelAndDoThis);
+    function gameStatusModelWatchThis( ){
+      return vm.GameService.gameStatusModel;
+    }
+    function gameStatusModelAndDoThis( n, o){
+      if ( n.gameFinished && !o.gameFinished ){
+        vm.next( );
+      }
+    }
+
+
 
   }
   LayoutController.$inject = [ '$timeout', '$rootScope', 'GameService'];
