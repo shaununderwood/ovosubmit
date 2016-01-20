@@ -24,7 +24,7 @@
            ng-class="{'hide':player.hasChosenWeapon()}"
            ng-repeat="weapon in vm.weapons"
            ng-click="vm.setPlayerWeapon( player, weapon);">
-        <h3>P</h3>
+        <h3><img src="{{weapon.image}}" style="vertical-align: middle; width: 50px; height: 50px;" /></h3>
       </div>
       <div class="col-xs-3"></div>
     </div>

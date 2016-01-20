@@ -6,6 +6,7 @@
 
     m.rounds = 0;
     m.roundsFought = 0;
+    m.draws = 'todo';
     m.gameType = null;
     m.playersArray = [ ];
     m.player1 = null;

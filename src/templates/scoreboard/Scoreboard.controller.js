@@ -1,14 +1,13 @@
 ( function ( ){
   'use strict';
 
-  function ScoreboardController( $rootScope, PlayerService, GameService, LayoutController){
+  function ScoreboardController( $rootScope, PlayerService, GameService){
     var vm = this;
     vm.$rootScope = $rootScope;
     vm.GameService = GameService;
     vm.PlayerService = PlayerService;
-    vm.LayoutController = LayoutController;
 
-    vm.playersReady = [];
+    vm.playersReady = [ ];
 
     vm.$rootScope.$watchCollection(
       function watchThis(){
@@ -31,9 +30,20 @@
   };
 
   ScoreboardController.prototype.quit = function quit( ){
-    this.LayoutController.goto( );
+    //this.LayoutController.goto( );
   };
 
+  ScoreboardController.prototype.getGamesLeft = function( ){
+    return this.GameService.rounds - this.GameService.roundsFought;
+  };
+
+  ScoreboardController.prototype.getDraws = function( ){
+    return this.GameService.draws;
+  };
+
+  ScoreboardController.prototype.gameOn = function gameOn( ){
+
+  };
 
 
 

@@ -31,9 +31,6 @@
         vm.next( );
       }
     }
-
-
-
   }
   LayoutController.$inject = [ '$timeout', '$rootScope', 'GameService'];
   LayoutController.stages  = [ '', 'player-details-1', 'player-details-2', 'game-type', 'game', 'scoreboard'];
