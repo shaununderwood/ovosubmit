@@ -15,7 +15,8 @@
       gameStatus: false
     };
 
-    vm.players = vm.PlayerService.getPlayers( );
+    //vm.players = vm.PlayerService.getPlayers( );
+    vm.players = vm.GameService.getPlayers( );
     vm.weapons = vm.WeaponService.getWeapons( );
 
     var waitingForChoice = [ ];

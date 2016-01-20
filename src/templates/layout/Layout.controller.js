@@ -64,6 +64,10 @@
       } else {
         this.goto( 'game-type');
       }
+
+    } else
+    if ( this.uiInView === 'game') {
+      this.goto( 'scoreboard');
     }
   };
 

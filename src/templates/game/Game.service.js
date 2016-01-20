@@ -37,6 +37,11 @@
     this.playersArray.push( new ovo.Player( playerName));
   };
 
+  GameService.prototype.getPlayers = function getPlayers( ){
+    return this.playersArray;
+  };
+
+
   GameService.prototype.getRounds = function getRounts( ){
     return this.rounds;
   };
