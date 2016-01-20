@@ -7,7 +7,6 @@
     vm.PlayerService = PlayerService;
 
 
-
   }
 
   angular

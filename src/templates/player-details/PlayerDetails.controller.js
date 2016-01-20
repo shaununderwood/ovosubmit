@@ -2,7 +2,6 @@
   'use strict';
 
   function PlayerDetailsController( GameService){
-    console.log('player controller launched');
     var vm = this;
     vm.GameService = GameService;
 
